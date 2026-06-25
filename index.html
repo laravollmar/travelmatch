@@ -1,10 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Meine Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelMatch</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #ffffff;
+      color: #2f273d;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .logo {
+      max-width: 520px;
+      width: 90%;
+      margin-bottom: 30px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eee6ff;
+      color: #9473d1;
+      padding: 7px 18px;
+      border-radius: 20px;
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    h1 span {
+      color: #9473d1;
+      font-style: italic;
+    }
+
+    .intro {
+      font-family: Arial, sans-serif;
+      color: #6f6384;
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 25px auto 45px;
+      max-width: 620px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      text-align: left;
+    }
+
+    .card {
+      background: #fbf9ff;
+      border: 1px solid #e7def4;
+      border-radius: 18px;
+      padding: 24px;
+      font-family: Arial, sans-serif;
+    }
+
+    .card h3 {
+      font-family: Georgia, serif;
+      margin: 12px 0 8px;
+      color: #2f273d;
+    }
+
+    .card p {
+      color: #6f6384;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .steps {
+      margin-top: 35px;
+      background: #fbf9ff;
+      border: 1px solid #e7def4;
+      border-radius: 18px;
+      padding: 28px;
+      text-align: left;
+      font-family: Arial, sans-serif;
+    }
+
+    .steps h2 {
+      font-family: Georgia, serif;
+      margin-top: 0;
+    }
+
+    .cta {
+      margin-top: 35px;
+      background: #3b314c;
+      color: white;
+      border-radius: 18px;
+      padding: 28px;
+      font-style: italic;
+      font-size: 20px;
+    }
+
+    .cta small {
+      display: block;
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+      font-style: normal;
+      color: #d6cbed;
+      font-size: 14px;
+    }
+
+    @media (max-width: 650px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hallo, das ist meine Website!</h1>
-  <p>Erstellt mit GitHub Pages.</p>
+  <div class="container">
+    <img src="travelmatch_logo_final.png" alt="TravelMatch Logo" class="logo">
+
+    <div class="tag">TRAVELMATCH</div>
+
+    <h1>
+      Travel smart.<br>
+      <span>Match perfectly.</span>
+    </h1>
+
+    <p class="intro">
+      TravelMatch helps you discover the destination that suits you —
+      and connects you with people who share the same journey.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div>🧭</div>
+        <h3>Destination Finder</h3>
+        <p>Answer a few questions about your travel style and receive personalised destination suggestions.</p>
+      </div>
+
+      <div class="card">
+        <div>🤝</div>
+        <h3>Buddy Matching</h3>
+        <p>Find travellers heading to the same destination and decide whether you explore solo or together.</p>
+      </div>
+
+      <div class="card">
+        <div>💬</div>
+        <h3>In-App Chat</h3>
+        <p>Get to know your travel buddies before the trip begins — safe, easy and all within the app.</p>
+      </div>
+
+      <div class="card">
+        <div>✈️</div>
+        <h3>Travel Profile</h3>
+        <p>Create your personal travel profile with style, budget and interests for even better matches.</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <h2>How it works</h2>
+      <p><strong>1. Create your profile</strong><br>Tell us about your travel style, interests and budget.</p>
+      <p><strong>2. Discover your destination</strong><br>Our algorithm suggests destinations that match you.</p>
+      <p><strong>3. Find buddies & take off</strong><br>See who shares your destination, chat and plan together.</p>
+    </div>
+
+    <div class="cta">
+      “Your next adventure is waiting.”
+      <small>Available on iOS & Android · Free to download</small>
+    </div>
+  </div>
 </body>
 </html>
