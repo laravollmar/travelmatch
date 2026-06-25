@@ -1,188 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TravelMatch</title>
+<div style="background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1.5rem; font-family: var(--font-sans);">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background: #ffffff;
-      color: #2f273d;
-      text-align: center;
-    }
+<div style="background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden;">
 
-    .container {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; border-bottom: 0.5px solid var(--color-border-tertiary);">
+  <div style="display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500;">
+    <i class="ti ti-map-pin-filled" style="color: #534AB7; font-size: 20px;" aria-hidden="true"></i>
+    TravelMatch
+  </div>
+  <div style="display: flex; gap: 20px; font-size: 14px; color: var(--color-text-secondary);">
+    <span>How it works</span>
+    <span>Destinations</span>
+    <span>Buddies</span>
+  </div>
+  <button style="font-size: 13px; padding: 6px 16px;">Get the app</button>
+</div>
 
-    .logo {
-      max-width: 520px;
-      width: 90%;
-      margin-bottom: 30px;
-    }
+<div style="text-align: center; padding: 3rem 2rem 2.5rem; background: #F5F4FC;">
+  <div style="display: inline-block; background: #EEEDFE; color: #3C3489; font-size: 11px; padding: 4px 12px; border-radius: var(--border-radius-md); margin-bottom: 1rem;">Now live in 40+ cities</div>
+  <h1 style="font-size: 30px; font-weight: 500; margin: 0 0 0.75rem; line-height: 1.3;">Find your destination.<br>Find your crew.</h1>
+  <p style="font-size: 15px; color: var(--color-text-secondary); max-width: 420px; margin: 0 auto 1.5rem; line-height: 1.6;">Answer a few questions, get matched to destinations that fit you, and meet travelers heading the same way.</p>
+  <div style="display: flex; gap: 10px; justify-content: center;">
+    <button style="background: #534AB7; color: white; border: none; font-size: 14px; padding: 10px 22px; border-radius: var(--border-radius-md);">Start matching</button>
+    <button style="font-size: 14px; padding: 10px 22px;">See how it works</button>
+  </div>
+</div>
 
-    .tag {
-      display: inline-block;
-      background: #eee6ff;
-      color: #9473d1;
-      padding: 7px 18px;
-      border-radius: 20px;
-      letter-spacing: 4px;
-      font-size: 12px;
-      margin-bottom: 20px;
-    }
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: var(--color-border-tertiary);">
+  <div style="background: var(--color-background-primary); padding: 1.5rem; text-align: center;">
+    <p style="font-size: 22px; font-weight: 500; margin: 0;">28,000+</p>
+    <p style="font-size: 12px; color: var(--color-text-secondary); margin: 4px 0 0;">matches made</p>
+  </div>
+  <div style="background: var(--color-background-primary); padding: 1.5rem; text-align: center;">
+    <p style="font-size: 22px; font-weight: 500; margin: 0;">180</p>
+    <p style="font-size: 12px; color: var(--color-text-secondary); margin: 4px 0 0;">destinations</p>
+  </div>
+  <div style="background: var(--color-background-primary); padding: 1.5rem; text-align: center;">
+    <p style="font-size: 22px; font-weight: 500; margin: 0;">4.8 / 5</p>
+    <p style="font-size: 12px; color: var(--color-text-secondary); margin: 4px 0 0;">app store rating</p>
+  </div>
+</div>
 
-    h1 {
-      font-size: 42px;
-      line-height: 1.15;
-      margin: 0;
-    }
-
-    h1 span {
-      color: #9473d1;
-      font-style: italic;
-    }
-
-    .intro {
-      font-family: Arial, sans-serif;
-      color: #6f6384;
-      font-size: 17px;
-      line-height: 1.6;
-      margin: 25px auto 45px;
-      max-width: 620px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      text-align: left;
-    }
-
-    .card {
-      background: #fbf9ff;
-      border: 1px solid #e7def4;
-      border-radius: 18px;
-      padding: 24px;
-      font-family: Arial, sans-serif;
-    }
-
-    .card h3 {
-      font-family: Georgia, serif;
-      margin: 12px 0 8px;
-      color: #2f273d;
-    }
-
-    .card p {
-      color: #6f6384;
-      line-height: 1.5;
-      margin: 0;
-    }
-
-    .steps {
-      margin-top: 35px;
-      background: #fbf9ff;
-      border: 1px solid #e7def4;
-      border-radius: 18px;
-      padding: 28px;
-      text-align: left;
-      font-family: Arial, sans-serif;
-    }
-
-    .steps h2 {
-      font-family: Georgia, serif;
-      margin-top: 0;
-    }
-
-    .cta {
-      margin-top: 35px;
-      background: #3b314c;
-      color: white;
-      border-radius: 18px;
-      padding: 28px;
-      font-style: italic;
-      font-size: 20px;
-    }
-
-    .cta small {
-      display: block;
-      margin-top: 10px;
-      font-family: Arial, sans-serif;
-      font-style: normal;
-      color: #d6cbed;
-      font-size: 14px;
-    }
-
-    @media (max-width: 650px) {
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <img src="travelmatch_logo_final.png" alt="TravelMatch Logo" class="logo">
-
-    <div class="tag">TRAVELMATCH</div>
-
-    <h1>
-      Travel smart.<br>
-      <span>Match perfectly.</span>
-    </h1>
-
-    <p class="intro">
-      TravelMatch helps you discover the destination that suits you —
-      and connects you with people who share the same journey.
-    </p>
-
-    <div class="cards">
-      <div class="card">
-        <div>🧭</div>
-        <h3>Destination Finder</h3>
-        <p>Answer a few questions about your travel style and receive personalised destination suggestions.</p>
-      </div>
-
-      <div class="card">
-        <div>🤝</div>
-        <h3>Buddy Matching</h3>
-        <p>Find travellers heading to the same destination and decide whether you explore solo or together.</p>
-      </div>
-
-      <div class="card">
-        <div>💬</div>
-        <h3>In-App Chat</h3>
-        <p>Get to know your travel buddies before the trip begins — safe, easy and all within the app.</p>
-      </div>
-
-      <div class="card">
-        <div>✈️</div>
-        <h3>Travel Profile</h3>
-        <p>Create your personal travel profile with style, budget and interests for even better matches.</p>
-      </div>
+<div style="padding: 2.5rem 2rem;">
+  <p style="text-align: center; font-size: 12px; letter-spacing: 1px; color: var(--color-text-tertiary); margin: 0 0 8px;">FEATURES</p>
+  <h2 style="text-align: center; font-size: 18px; font-weight: 500; margin: 0 0 1.5rem;">Everything you need to plan together</h2>
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px;">
+    <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.1rem;">
+      <i class="ti ti-compass" style="font-size: 20px; color: #534AB7;" aria-hidden="true"></i>
+      <p style="font-weight: 500; font-size: 14px; margin: 10px 0 4px;">Destination finder</p>
+      <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0; line-height: 1.5;">Personalised suggestions based on your style and budget.</p>
     </div>
-
-    <div class="steps">
-      <h2>How it works</h2>
-      <p><strong>1. Create your profile</strong><br>Tell us about your travel style, interests and budget.</p>
-      <p><strong>2. Discover your destination</strong><br>Our algorithm suggests destinations that match you.</p>
-      <p><strong>3. Find buddies & take off</strong><br>See who shares your destination, chat and plan together.</p>
+    <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.1rem;">
+      <i class="ti ti-users" style="font-size: 20px; color: #993556;" aria-hidden="true"></i>
+      <p style="font-weight: 500; font-size: 14px; margin: 10px 0 4px;">Buddy matching</p>
+      <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0; line-height: 1.5;">Meet travellers going to the same place as you.</p>
     </div>
-
-    <div class="cta">
-      “Your next adventure is waiting.”
-      <small>Available on iOS & Android · Free to download</small>
+    <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.1rem;">
+      <i class="ti ti-message-circle" style="font-size: 20px; color: #0F6E56;" aria-hidden="true"></i>
+      <p style="font-weight: 500; font-size: 14px; margin: 10px 0 4px;">In-app chat</p>
+      <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0; line-height: 1.5;">Get to know each other safely before you meet up.</p>
+    </div>
+    <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.1rem;">
+      <i class="ti ti-id-badge-2" style="font-size: 20px; color: #854F0B;" aria-hidden="true"></i>
+      <p style="font-weight: 500; font-size: 14px; margin: 10px 0 4px;">Travel profile</p>
+      <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0; line-height: 1.5;">Show your style, interests and travel dates at a glance.</p>
     </div>
   </div>
-</body>
-</html>
+</div>
+
+<div style="background: var(--color-background-secondary); padding: 2.5rem 2rem;">
+  <p style="text-align: center; font-size: 12px; letter-spacing: 1px; color: var(--color-text-tertiary); margin: 0 0 8px;">HOW IT WORKS</p>
+  <h2 style="text-align: center; font-size: 18px; font-weight: 500; margin: 0 0 1.5rem;">Three steps to your next trip</h2>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px;">
+    <div style="text-align: center;">
+      <div style="width: 36px; height: 36px; border-radius: 50%; background: #EEEDFE; color: #3C3489; display: flex; align-items: center; justify-content: center; font-weight: 500; margin: 0 auto 10px;">1</div>
+      <p style="font-weight: 500; font-size: 14px; margin: 0 0 4px;">Build your profile</p>
+      <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0; line-height: 1.5;">Style, interests, budget.</p>
+    </div>
+    <div style="text-align: center;">
+      <div style="width: 36px; height: 36px; border-radius: 50%; background: #FAECE7; color: #712B13; display: flex; align-items: center; justify-content: center; font-weight: 500; margin: 0 auto 10px;">2</div>
+      <p style="font-weight: 500; font-size: 14px; margin: 0 0 4px;">Get matched</p>
+      <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0; line-height: 1.5;">To a destination that fits.</p>
+    </div>
+    <div style="text-align: center;">
+      <div style="width: 36px; height: 36px; border-radius: 50%; background: #E1F5EE; color: #085041; display: flex; align-items: center; justify-content: center; font-weight: 500; margin: 0 auto 10px;">3</div>
+      <p style="font-weight: 500; font-size: 14px; margin: 0 0 4px;">Find your buddies</p>
+      <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0; line-height: 1.5;">Chat, plan, and go.</p>
+    </div>
+  </div>
+</div>
+
+<div style="text-align: center; padding: 2.5rem 2rem; background: #2C2C2A;">
+  <p style="color: white; font-size: 18px; font-weight: 500; margin: 0 0 0.5rem;">Your next adventure is waiting</p>
+  <p style="color: #B4B2A9; font-size: 13px; margin: 0 0 1.25rem;">Free to download on iOS and Android</p>
+  <button style="background: white; color: #2C2C2A; border: none; font-size: 14px; padding: 10px 22px; border-radius: var(--border-radius-md);">Download TravelMatch</button>
+</div>
+
+</div>
+</div>
