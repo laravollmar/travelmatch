@@ -268,6 +268,139 @@
       .logo {
         width: 160px;
       }
+      #journey{
+
+padding:120px 8%;
+background:white;
+
+}
+
+.journey-step{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:80px;
+margin:140px 0;
+
+}
+
+.reverse{
+
+flex-direction:row-reverse;
+
+}
+
+.phone-card{
+
+width:290px;
+background:#2f273d;
+padding:14px;
+border-radius:42px;
+box-shadow:0 30px 70px rgba(0,0,0,.18);
+transition:.4s;
+
+}
+
+.phone-card:hover{
+
+transform:translateY(-12px);
+
+}
+
+.phone-screen{
+
+background:linear-gradient(#faf7ff,#ffffff);
+border-radius:30px;
+padding:28px;
+min-height:520px;
+
+}
+
+.phone-screen h3{
+
+font-family:Georgia,serif;
+margin-bottom:25px;
+
+}
+
+.mini-card{
+
+background:white;
+padding:16px;
+border-radius:18px;
+margin-bottom:14px;
+box-shadow:0 10px 25px rgba(148,115,209,.15);
+
+}
+
+.phone-screen button{
+
+margin-top:25px;
+width:100%;
+padding:14px;
+background:#9473d1;
+color:white;
+border:none;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+.journey-text{
+
+max-width:470px;
+
+}
+
+.journey-text span{
+
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:48px;
+height:48px;
+background:#9473d1;
+color:white;
+border-radius:50%;
+font-weight:bold;
+margin-bottom:25px;
+
+}
+
+.journey-text h3{
+
+font-family:Georgia,serif;
+font-size:36px;
+margin-bottom:18px;
+
+}
+
+.journey-text p{
+
+color:#6f6384;
+font-size:18px;
+line-height:1.7;
+
+}
+
+@media(max-width:900px){
+
+.journey-step,
+.reverse{
+
+flex-direction:column;
+
+}
+
+.phone-card{
+
+width:270px;
+
+}
+
+}
     }
   </style>
 </head>
@@ -369,259 +502,140 @@
     </div>
   </section>
 
-<section id="app-walkthrough" style="background:#ffffff;padding:120px 8%;overflow:hidden;">
+<section id="journey">
 
-  <h2 class="section-title">Experience TravelMatch</h2>
+    <h2 class="section-title">Your TravelMatch Journey</h2>
 
-  <p class="section-subtitle">
-    Follow the journey from travel profile to perfect match.
-  </p>
+    <p class="section-subtitle">
+        Four simple steps to your next unforgettable adventure.
+    </p>
 
-  <style>
-    .reveal-wrapper {
-      position: relative;
-      max-width: 1100px;
-      margin: 80px auto 0;
-      min-height: 2200px;
-    }
+    <!-- STEP 1 -->
 
-    .reveal-phone {
-      position: sticky;
-      top: 110px;
-      width: 310px;
-      height: 620px;
-      margin: 0 auto;
-      background: #2f273d;
-      border-radius: 48px;
-      padding: 16px;
-      box-shadow: 0 35px 80px rgba(47,39,61,.3);
-      z-index: 5;
-    }
+    <div class="journey-step">
 
-    .reveal-screen {
-      height: 100%;
-      border-radius: 34px;
-      background: linear-gradient(180deg,#f8f4ff,#ffffff);
-      padding: 34px 24px;
-      overflow: hidden;
-      transition: all .5s ease;
-    }
+        <div class="phone-card">
+            <div class="phone-screen">
+                <h3>Create your profile</h3>
 
-    .screen-label {
-      color: #9473d1;
-      font-size: 12px;
-      letter-spacing: 2px;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 28px;
-    }
+                <div class="mini-card">💸 Budget</div>
+                <div class="mini-card">🏝️ Interests</div>
+                <div class="mini-card">✈️ Travel Style</div>
 
-    .reveal-screen h3 {
-      font-family: Georgia, serif;
-      font-size: 30px;
-      line-height: 1.1;
-      margin-bottom: 15px;
-      color: #2f273d;
-    }
+                <button>Continue</button>
+            </div>
+        </div>
 
-    .reveal-screen p {
-      color: #6f6384;
-      font-size: 15px;
-      margin-bottom: 25px;
-    }
+        <div class="journey-text">
+            <span>01</span>
+            <h3>Create your travel profile</h3>
 
-    .app-card {
-      background: white;
-      border-radius: 22px;
-      padding: 16px;
-      margin-bottom: 15px;
-      box-shadow: 0 12px 30px rgba(148,115,209,.14);
-      font-weight: 600;
-    }
+            <p>
+                Tell us about your interests, budget and travel preferences
+                to receive personalised recommendations.
+            </p>
+        </div>
 
-    .floating-step {
-      position: sticky;
-      top: 280px;
-      width: 280px;
-      background: white;
-      border: 1px solid #e6ddf5;
-      border-radius: 28px;
-      padding: 30px;
-      box-shadow: 0 20px 50px rgba(148,115,209,.18);
-      opacity: 0;
-      transform: translateY(40px) scale(.95);
-      transition: all .6s ease;
-      z-index: 10;
-    }
-
-    .floating-step.active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    .floating-step.left {
-      margin-left: 0;
-      margin-right: auto;
-    }
-
-    .floating-step.right {
-      margin-left: auto;
-      margin-right: 0;
-    }
-
-    .floating-step span {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: #9473d1;
-      color: white;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    .floating-step h3 {
-      font-family: Georgia, serif;
-      font-size: 25px;
-      margin-bottom: 10px;
-    }
-
-    .floating-step p {
-      color: #6f6384;
-    }
-
-    .step-zone {
-      height: 480px;
-    }
-
-    @media(max-width:900px){
-      .reveal-wrapper {
-        min-height: auto;
-      }
-
-      .reveal-phone {
-        position: relative;
-        top: 0;
-        width: 280px;
-        height: 570px;
-        margin-bottom: 50px;
-      }
-
-      .floating-step {
-        position: relative;
-        top: 0;
-        width: 100%;
-        margin: 30px auto;
-      }
-
-      .step-zone {
-        height: auto;
-      }
-    }
-  </style>
-
-  <div class="reveal-wrapper">
-
-    <div class="reveal-phone">
-      <div class="reveal-screen" id="revealScreen">
-        <div class="screen-label">TRAVELMATCH</div>
-        <h3>Create your travel profile</h3>
-        <p>Tell us what kind of traveller you are.</p>
-        <div class="app-card">💸 Budget: Student friendly</div>
-        <div class="app-card">🌊 Style: Beach & culture</div>
-        <div class="app-card">🤝 Open for travel buddies</div>
-      </div>
     </div>
 
-    <div class="step-zone">
-      <div class="floating-step left active" data-screen="0">
-        <span>1</span>
-        <h3>Create your profile</h3>
-        <p>Users enter budget, travel style, interests and preferred destinations.</p>
-      </div>
+
+    <!-- STEP 2 -->
+
+    <div class="journey-step reverse">
+
+        <div class="journey-text">
+            <span>02</span>
+
+            <h3>Discover destinations</h3>
+
+            <p>
+                Our algorithm finds destinations perfectly suited to your travel personality.
+            </p>
+
+        </div>
+
+        <div class="phone-card">
+
+            <div class="phone-screen">
+
+                <h3>Your Matches</h3>
+
+                <div class="mini-card">🇮🇹 Italy • 96%</div>
+                <div class="mini-card">🇵🇹 Portugal • 93%</div>
+                <div class="mini-card">🇬🇷 Greece • 91%</div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="step-zone">
-      <div class="floating-step right" data-screen="1">
-        <span>2</span>
-        <h3>Find your destination</h3>
-        <p>TravelMatch suggests destinations that fit the user’s personality and plans.</p>
-      </div>
+
+    <!-- STEP 3 -->
+
+    <div class="journey-step">
+
+        <div class="phone-card">
+
+            <div class="phone-screen">
+
+                <h3>Travel Buddies</h3>
+
+                <div class="mini-card">👩 Emma</div>
+                <div class="mini-card">👨 Lucas</div>
+                <div class="mini-card">👩 Sophia</div>
+
+            </div>
+
+        </div>
+
+        <div class="journey-text">
+
+            <span>03</span>
+
+            <h3>Meet like-minded travellers</h3>
+
+            <p>
+                Connect with people travelling to the same destination
+                and make travelling easier and safer.
+            </p>
+
+        </div>
+
     </div>
 
-    <div class="step-zone">
-      <div class="floating-step left" data-screen="2">
-        <span>3</span>
-        <h3>Meet travel buddies</h3>
-        <p>Users discover like-minded travellers and connect safely before the trip.</p>
-      </div>
+
+    <!-- STEP 4 -->
+
+    <div class="journey-step reverse">
+
+        <div class="journey-text">
+
+            <span>04</span>
+
+            <h3>Start your journey</h3>
+
+            <p>
+                Chat, organise your itinerary and enjoy your trip together.
+            </p>
+
+        </div>
+
+        <div class="phone-card">
+
+            <div class="phone-screen">
+
+                <h3>Ready ✈️</h3>
+
+                <div class="mini-card">💬 Group Chat</div>
+                <div class="mini-card">📍 Shared Itinerary</div>
+                <div class="mini-card">🌍 Adventure begins</div>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="step-zone">
-      <div class="floating-step right" data-screen="3">
-        <span>4</span>
-        <h3>Start your journey</h3>
-        <p>Chat in the app, plan together and create unforgettable travel experiences.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <script>
-    const revealScreens = [
-      `
-      <div class="screen-label">TRAVELMATCH</div>
-      <h3>Create your travel profile</h3>
-      <p>Tell us what kind of traveller you are.</p>
-      <div class="app-card">💸 Budget: Student friendly</div>
-      <div class="app-card">🌊 Style: Beach & culture</div>
-      <div class="app-card">🤝 Open for travel buddies</div>
-      `,
-      `
-      <div class="screen-label">TRAVELMATCH</div>
-      <h3>Your destination matches</h3>
-      <p>Discover places that fit your travel personality.</p>
-      <div class="app-card">🇵🇹 Lisbon · 96% match</div>
-      <div class="app-card">🇮🇹 Rome · 91% match</div>
-      <div class="app-card">🇬🇷 Crete · 88% match</div>
-      `,
-      `
-      <div class="screen-label">TRAVELMATCH</div>
-      <h3>Meet your travel buddy</h3>
-      <p>Connect with people who want similar trips.</p>
-      <div class="app-card">👩 Emma · Lisbon · 94%</div>
-      <div class="app-card">👨 Lucas · Rome · 89%</div>
-      <div class="app-card">👩 Sophia · Crete · 86%</div>
-      `,
-      `
-      <div class="screen-label">TRAVELMATCH</div>
-      <h3>Chat and plan together</h3>
-      <p>Start planning your next adventure safely in the app.</p>
-      <div class="app-card">💬 “Want to visit the old town?”</div>
-      <div class="app-card">📍 Shared itinerary created</div>
-      <div class="app-card">✈️ Trip starts soon</div>
-      `
-    ];
-
-    const revealSteps = document.querySelectorAll(".floating-step");
-    const revealScreen = document.getElementById("revealScreen");
-
-    window.addEventListener("scroll", () => {
-      revealSteps.forEach((step) => {
-        const rect = step.getBoundingClientRect();
-
-        if (rect.top < window.innerHeight * 0.55 && rect.bottom > window.innerHeight * 0.25) {
-          revealSteps.forEach(s => s.classList.remove("active"));
-          step.classList.add("active");
-
-          const index = step.dataset.screen;
-          revealScreen.innerHTML = revealScreens[index];
-        }
-      });
-    });
-  </script>
 
 </section>
   
