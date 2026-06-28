@@ -372,49 +372,37 @@
 <section id="app-walkthrough" style="background:#ffffff;padding:120px 8%;overflow:hidden;">
 
   <h2 class="section-title">Experience TravelMatch</h2>
+
   <p class="section-subtitle">
-    Scroll through the app journey and see how TravelMatch guides users from inspiration to their perfect trip.
+    Follow the journey from travel profile to perfect match.
   </p>
 
   <style>
-    .scroll-showcase {
-      display: grid;
-      grid-template-columns: 1fr 380px 1fr;
-      gap: 50px;
-      align-items: center;
-      max-width: 1200px;
+    .reveal-wrapper {
+      position: relative;
+      max-width: 1100px;
       margin: 80px auto 0;
-      min-height: 1200px;
+      min-height: 2200px;
     }
 
-    .phone-sticky {
+    .reveal-phone {
       position: sticky;
-      top: 120px;
-      height: 650px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .phone {
+      top: 110px;
       width: 310px;
       height: 620px;
+      margin: 0 auto;
       background: #2f273d;
       border-radius: 48px;
       padding: 16px;
       box-shadow: 0 35px 80px rgba(47,39,61,.3);
-      transition: transform .4s ease;
+      z-index: 5;
     }
 
-    .phone:hover {
-      transform: translateY(-10px) scale(1.02);
-    }
-
-    .screen {
+    .reveal-screen {
       height: 100%;
       border-radius: 34px;
       background: linear-gradient(180deg,#f8f4ff,#ffffff);
-      padding: 32px 24px;
+      padding: 34px 24px;
       overflow: hidden;
       transition: all .5s ease;
     }
@@ -425,10 +413,10 @@
       letter-spacing: 2px;
       font-weight: 800;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
 
-    .screen h3 {
+    .reveal-screen h3 {
       font-family: Georgia, serif;
       font-size: 30px;
       line-height: 1.1;
@@ -436,7 +424,7 @@
       color: #2f273d;
     }
 
-    .screen p {
+    .reveal-screen p {
       color: #6f6384;
       font-size: 15px;
       margin-bottom: 25px;
@@ -451,104 +439,138 @@
       font-weight: 600;
     }
 
-    .step {
-      min-height: 300px;
-      background: #fbf9ff;
+    .floating-step {
+      position: sticky;
+      top: 280px;
+      width: 280px;
+      background: white;
       border: 1px solid #e6ddf5;
       border-radius: 28px;
-      padding: 35px;
-      margin-bottom: 120px;
-      box-shadow: 0 18px 45px rgba(148,115,209,.12);
-      opacity: .45;
-      transform: translateY(30px);
-      transition: all .5s ease;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(148,115,209,.18);
+      opacity: 0;
+      transform: translateY(40px) scale(.95);
+      transition: all .6s ease;
+      z-index: 10;
     }
 
-    .step.active {
+    .floating-step.active {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
 
-    .step h3 {
+    .floating-step.left {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .floating-step.right {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .floating-step span {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #9473d1;
+      color: white;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .floating-step h3 {
       font-family: Georgia, serif;
-      font-size: 28px;
-      margin-bottom: 15px;
+      font-size: 25px;
+      margin-bottom: 10px;
     }
 
-    .step p {
+    .floating-step p {
       color: #6f6384;
     }
 
-    .left-steps,
-    .right-steps {
-      padding-top: 120px;
+    .step-zone {
+      height: 480px;
     }
 
     @media(max-width:900px){
-      .scroll-showcase {
-        grid-template-columns: 1fr;
+      .reveal-wrapper {
         min-height: auto;
       }
 
-      .phone-sticky {
+      .reveal-phone {
         position: relative;
         top: 0;
+        width: 280px;
+        height: 570px;
+        margin-bottom: 50px;
       }
 
-      .left-steps,
-      .right-steps {
-        padding-top: 0;
+      .floating-step {
+        position: relative;
+        top: 0;
+        width: 100%;
+        margin: 30px auto;
       }
 
-      .step {
-        margin-bottom: 40px;
+      .step-zone {
+        height: auto;
       }
     }
   </style>
 
-  <div class="scroll-showcase">
+  <div class="reveal-wrapper">
 
-    <div class="left-steps">
-      <div class="step active" data-screen="0">
-        <h3>01 · Create your profile</h3>
-        <p>Users enter their budget, interests, travel style and destination preferences.</p>
-      </div>
-
-      <div class="step" data-screen="2">
-        <h3>03 · Meet your buddy</h3>
-        <p>TravelMatch connects users with like-minded travellers who share similar plans.</p>
-      </div>
-    </div>
-
-    <div class="phone-sticky">
-      <div class="phone">
-        <div class="screen" id="phoneScreen">
-          <div class="screen-label">TRAVELMATCH</div>
-          <h3>Create your travel profile</h3>
-          <p>Tell us what kind of traveller you are.</p>
-          <div class="app-card">💸 Budget: Student friendly</div>
-          <div class="app-card">🌊 Style: Beach & culture</div>
-          <div class="app-card">🤝 Open for travel buddies</div>
-        </div>
+    <div class="reveal-phone">
+      <div class="reveal-screen" id="revealScreen">
+        <div class="screen-label">TRAVELMATCH</div>
+        <h3>Create your travel profile</h3>
+        <p>Tell us what kind of traveller you are.</p>
+        <div class="app-card">💸 Budget: Student friendly</div>
+        <div class="app-card">🌊 Style: Beach & culture</div>
+        <div class="app-card">🤝 Open for travel buddies</div>
       </div>
     </div>
 
-    <div class="right-steps">
-      <div class="step" data-screen="1">
-        <h3>02 · Get destination matches</h3>
-        <p>The app recommends destinations that match the user’s personal preferences.</p>
+    <div class="step-zone">
+      <div class="floating-step left active" data-screen="0">
+        <span>1</span>
+        <h3>Create your profile</h3>
+        <p>Users enter budget, travel style, interests and preferred destinations.</p>
       </div>
+    </div>
 
-      <div class="step" data-screen="3">
-        <h3>04 · Chat & plan</h3>
-        <p>Users can chat safely, plan together and start their journey with confidence.</p>
+    <div class="step-zone">
+      <div class="floating-step right" data-screen="1">
+        <span>2</span>
+        <h3>Find your destination</h3>
+        <p>TravelMatch suggests destinations that fit the user’s personality and plans.</p>
+      </div>
+    </div>
+
+    <div class="step-zone">
+      <div class="floating-step left" data-screen="2">
+        <span>3</span>
+        <h3>Meet travel buddies</h3>
+        <p>Users discover like-minded travellers and connect safely before the trip.</p>
+      </div>
+    </div>
+
+    <div class="step-zone">
+      <div class="floating-step right" data-screen="3">
+        <span>4</span>
+        <h3>Start your journey</h3>
+        <p>Chat in the app, plan together and create unforgettable travel experiences.</p>
       </div>
     </div>
 
   </div>
 
   <script>
-    const screens = [
+    const revealScreens = [
       `
       <div class="screen-label">TRAVELMATCH</div>
       <h3>Create your travel profile</h3>
@@ -583,23 +605,21 @@
       `
     ];
 
-    const steps = document.querySelectorAll(".step");
-    const phoneScreen = document.getElementById("phoneScreen");
+    const revealSteps = document.querySelectorAll(".floating-step");
+    const revealScreen = document.getElementById("revealScreen");
 
     window.addEventListener("scroll", () => {
-      let activeIndex = 0;
-
-      steps.forEach((step) => {
+      revealSteps.forEach((step) => {
         const rect = step.getBoundingClientRect();
 
         if (rect.top < window.innerHeight * 0.55 && rect.bottom > window.innerHeight * 0.25) {
-          steps.forEach(s => s.classList.remove("active"));
+          revealSteps.forEach(s => s.classList.remove("active"));
           step.classList.add("active");
-          activeIndex = step.dataset.screen;
+
+          const index = step.dataset.screen;
+          revealScreen.innerHTML = revealScreens[index];
         }
       });
-
-      phoneScreen.innerHTML = screens[activeIndex];
     });
   </script>
 
