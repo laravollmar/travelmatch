@@ -369,84 +369,223 @@
     </div>
   </section>
 
-<section id="app-walkthrough" style="padding:100px 8%;background:#ffffff;">
+<section id="app-walkthrough" style="padding:110px 8%;background:#ffffff;overflow:hidden;">
 
-  <h2 class="section-title">How TravelMatch guides you</h2>
+  <h2 class="section-title">Meet the TravelMatch app</h2>
 
   <p class="section-subtitle">
-    A simple app experience that leads users from inspiration to their perfect trip.
+    From your travel profile to your perfect destination match — TravelMatch guides you step by step.
   </p>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:auto;">
+  <style>
+    .tm-showcase {
+      position: relative;
+      max-width: 1100px;
+      margin: 70px auto 0;
+      min-height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-    <div style="background:#2f273d;border-radius:42px;padding:18px;width:300px;margin:auto;box-shadow:0 25px 60px rgba(47,39,61,.25);">
-      <div style="background:linear-gradient(180deg,#f8f4ff,#ffffff);border-radius:30px;padding:28px 22px;min-height:560px;text-align:left;">
-        
-        <div style="text-align:center;margin-bottom:28px;color:#9473d1;font-weight:700;letter-spacing:2px;font-size:12px;">
-          TRAVELMATCH
-        </div>
+    .tm-phone {
+      width: 310px;
+      height: 620px;
+      background: #2f273d;
+      border-radius: 46px;
+      padding: 16px;
+      box-shadow: 0 35px 80px rgba(47, 39, 61, 0.28);
+      animation: phoneFloat 4.5s ease-in-out infinite;
+      z-index: 3;
+    }
 
-        <h3 style="font-family:Georgia,serif;font-size:30px;line-height:1.15;margin-bottom:15px;">
-          Find your perfect destination
-        </h3>
+    .tm-screen {
+      height: 100%;
+      border-radius: 34px;
+      background: linear-gradient(180deg, #f8f4ff, #ffffff);
+      padding: 28px 22px;
+      overflow: hidden;
+      position: relative;
+    }
 
-        <p style="color:#6f6384;margin-bottom:25px;">
-          Tell us your travel style and receive places that truly match you.
-        </p>
+    .tm-notch {
+      width: 95px;
+      height: 20px;
+      background: #2f273d;
+      border-radius: 0 0 18px 18px;
+      margin: -28px auto 22px;
+    }
 
-        <div style="background:white;border-radius:20px;padding:18px;margin-bottom:15px;box-shadow:0 10px 25px rgba(148,115,209,.12);">
-          🌊 Beach escape
-        </div>
+    .tm-app-title {
+      color: #9473d1;
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 25px;
+    }
 
-        <div style="background:white;border-radius:20px;padding:18px;margin-bottom:15px;box-shadow:0 10px 25px rgba(148,115,209,.12);">
-          🏛️ Culture trip
-        </div>
+    .tm-screen h3 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+      color: #2f273d;
+    }
 
-        <div style="background:white;border-radius:20px;padding:18px;box-shadow:0 10px 25px rgba(148,115,209,.12);">
-          🧗 Adventure travel
-        </div>
+    .tm-screen p {
+      color: #6f6384;
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
 
-        <a href="#" style="display:block;text-align:center;margin-top:35px;background:#9473d1;color:white;text-decoration:none;padding:14px;border-radius:30px;font-weight:700;">
-          Start matching
-        </a>
+    .tm-card {
+      background: white;
+      border-radius: 20px;
+      padding: 15px;
+      margin-bottom: 14px;
+      box-shadow: 0 12px 28px rgba(148,115,209,.14);
+      font-weight: 600;
+    }
 
+    .tm-button {
+      display: block;
+      text-align: center;
+      margin-top: 28px;
+      padding: 14px;
+      border-radius: 30px;
+      background: #9473d1;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .tm-floating-card {
+      position: absolute;
+      background: white;
+      border-radius: 24px;
+      padding: 22px 26px;
+      width: 250px;
+      box-shadow: 0 22px 55px rgba(148,115,209,.18);
+      border: 1px solid #eee6ff;
+      animation: cardFloat 5s ease-in-out infinite;
+    }
+
+    .tm-floating-card h4 {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      margin-bottom: 8px;
+      color: #2f273d;
+    }
+
+    .tm-floating-card p {
+      color: #6f6384;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .card-one {
+      left: 0;
+      top: 70px;
+    }
+
+    .card-two {
+      right: 0;
+      top: 130px;
+      animation-delay: .8s;
+    }
+
+    .card-three {
+      left: 70px;
+      bottom: 60px;
+      animation-delay: 1.4s;
+    }
+
+    .card-four {
+      right: 70px;
+      bottom: 20px;
+      animation-delay: 2s;
+    }
+
+    @keyframes phoneFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+      }
+      50% {
+        transform: translateY(-22px) rotate(2deg);
+      }
+    }
+
+    @keyframes cardFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-16px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .tm-showcase {
+        min-height: auto;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .tm-floating-card {
+        position: static;
+        width: 100%;
+        max-width: 330px;
+      }
+
+      .tm-phone {
+        width: 280px;
+        height: 570px;
+      }
+    }
+  </style>
+
+  <div class="tm-showcase">
+
+    <div class="tm-floating-card card-one">
+      <h4>01 · Profile</h4>
+      <p>Users enter budget, interests, travel style and preferences.</p>
+    </div>
+
+    <div class="tm-floating-card card-two">
+      <h4>02 · Destination Match</h4>
+      <p>The app suggests destinations that truly fit the user.</p>
+    </div>
+
+    <div class="tm-phone">
+      <div class="tm-screen">
+        <div class="tm-notch"></div>
+        <div class="tm-app-title">TRAVELMATCH</div>
+
+        <h3>Find your perfect destination</h3>
+        <p>Answer a few questions and discover where your next journey could begin.</p>
+
+        <div class="tm-card">🌊 Beach escape · 94% match</div>
+        <div class="tm-card">🏛️ Culture trip · 89% match</div>
+        <div class="tm-card">🧗 Adventure travel · 86% match</div>
+
+        <a href="#" class="tm-button">Start matching</a>
       </div>
     </div>
 
-    <div style="display:grid;gap:22px;">
+    <div class="tm-floating-card card-three">
+      <h4>03 · Buddy Match</h4>
+      <p>Meet like-minded travellers with similar plans and interests.</p>
+    </div>
 
-      <div style="background:#fbf9ff;border:1px solid #e6ddf5;border-radius:24px;padding:26px;">
-        <strong>01 · Create your profile</strong>
-        <p style="color:#6f6384;margin-top:8px;">
-          Users enter their budget, travel style, interests and preferred destinations.
-        </p>
-      </div>
-
-      <div style="background:#fbf9ff;border:1px solid #e6ddf5;border-radius:24px;padding:26px;">
-        <strong>02 · Get matched destinations</strong>
-        <p style="color:#6f6384;margin-top:8px;">
-          TravelMatch suggests destinations that fit the user’s personality and plans.
-        </p>
-      </div>
-
-      <div style="background:#fbf9ff;border:1px solid #e6ddf5;border-radius:24px;padding:26px;">
-        <strong>03 · Meet travel buddies</strong>
-        <p style="color:#6f6384;margin-top:8px;">
-          Users discover like-minded travellers and connect safely before the trip.
-        </p>
-      </div>
-
-      <div style="background:#fbf9ff;border:1px solid #e6ddf5;border-radius:24px;padding:26px;">
-        <strong>04 · Start your journey</strong>
-        <p style="color:#6f6384;margin-top:8px;">
-          Plan together, chat in the app and create unforgettable travel experiences.
-        </p>
-      </div>
-
+    <div class="tm-floating-card card-four">
+      <h4>04 · Chat & Plan</h4>
+      <p>Connect safely, chat in the app and plan your trip together.</p>
     </div>
 
   </div>
 
+</section>
 </section>
   
  <section id="testimonials">
